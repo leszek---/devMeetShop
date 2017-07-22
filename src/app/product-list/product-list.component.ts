@@ -1,5 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {Product} from '../../models/productModel';
+import {Filter} from '../../models/filterModel';
+import { ProductService } from "../product/product-service";
 
 @Component({
   selector: 'app-product-list',
@@ -8,21 +10,27 @@ import {Product} from '../../models/productModel';
 })
 export class ProductListComponent {
   @Input() products: Product[];
-  
-  public filters: Array<{id:number, name:string, value:boolean}> = [
-    {id: 1, name: "Price", value: true},
-    {id: 2, name: "Name", value: false},
-    {id: 3, name: "Promoted", value: false}
+  //private productService: ProductService;
+  constructor(private productService: ProductService){
+    //this.productService = productService;
+  }
+
+  public filters: Array<Filter> = [
+    {id: 1, nameValue: "price", name: "Price", value: true},
+    {id: 2, nameValue: "name", name: "Name", value: false},
+    {id: 3, nameValue: "isPromoted", name: "Promoted", value: false}
   ];
 
   public onClick (filterToChange) {
     this.filters.forEach(filter => { 
       if(filter.id == filterToChange.id){
         filter.value = true;
+        this.productService.sortProducts(filter);
       }else{
         filter.value = false;
       }
-    });  
+    });
+      
   }
 
   
