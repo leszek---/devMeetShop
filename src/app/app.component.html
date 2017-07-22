@@ -1,16 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
 <h1>List of products</h1>
-
-<div class="card-group">
-  <div class="card" *ngFor="let product of products">
-    <img class="card-img-top nSize" src="{{product.photoUrl}}" alt="Card image cap">
-    <div class="card-block">
-      <h4 class="card-title">{{product.name}}</h4>
-      <p class="card-text">{{product.description}}</p>
-    </div>
-    <div class="card-footer">
-      <small class="text-muted">Jest promowany{{product.isPromoted}}</small>
-    </div>
-  </div>
-
+<app-product-list></app-product-list>
