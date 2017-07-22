@@ -24,7 +24,16 @@ export class SearchComponent implements OnInit {
 
   filter = (searchText: string) => {
     const searchTextLowered = searchText.toLowerCase();
-    const result = this.products.filter(product => product.name.toLowerCase().includes(searchTextLowered));
+    const result = this.products.filter(product =>
+      this.filterProduct(product.name, searchTextLowered) ||
+      this.filterProduct(product.price, searchTextLowered) ||
+      this.filterProduct(product.description, searchTextLowered)
+     );
     this.filteredProducts.next(result);
+  }
+
+  filterProduct = (property: any , searchText: string ) => {
+      const formattedProperty = typeof property === 'number' ? property.toString() : property;
+      return formattedProperty.toLowerCase().includes(searchText);
   }
 }
