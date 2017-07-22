@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Product} from '../models/productModel';
 
 @Component({
   selector: 'app-root',
@@ -6,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public users = [
-    {name: 'Aaa', id: 1},
-        {name: 'Bbb', id: 2},
-            {name: 'Ccc', id: 3},
+  public products: Product[] = [
+    {id: 1, name: 'Hammer', isPromoted: false},
+    {id: 2, name: 'Drill', description: 'Just a drill', isPromoted: false},
+    {id: 3, name: 'Screwdriver', description: 'Gimme screw', isPromoted: false},
   ];
 }
