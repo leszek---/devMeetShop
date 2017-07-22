@@ -13,6 +13,6 @@ export class AppComponent {
     {id: 2, name: 'Drill', price: 1, description: 'Just a drill', isPromoted: false,
     photoUrl: 'http://s7g3.scene7.com/is/image//ae235?src=ae235/2710P_P&$prodImageMedium$'},
     {id: 3, name: 'Screwdriver', price: 5, description: 'Gimme screw', isPromoted: false,
-  photoUrl: 'http://www.irwin.com/uploads/products/large/irwin-torquezone%E2%84%A2-8-pc-screwdriver-set-2440.jpg'},
+  photoUrl: 'http://www.irwin.com/uploads/products/large/irwin-torquezone%E2%84%A2-8-pc-screwdriver-set-2440.jpg'}
   ];
 }
