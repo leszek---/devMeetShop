@@ -6,7 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app';
   public users = [
     {name: 'Aaa', id: 1},
         {name: 'Bbb', id: 2},
