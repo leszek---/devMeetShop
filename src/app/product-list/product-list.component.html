@@ -1,3 +1,10 @@
+<div class="btn-group" data-toggle="buttons">
+  <label *ngFor="let filter of filters" class="btn btn-primary" [ngClass]="{'active': filter.value}">
+    <input type="checkbox"  autocomplete="off" (click)="onClick(filter)">
+    {{filter.name}}
+  </label>
+</div>
+
 <div class="card-group">
 <app-product  *ngFor="let product of products" [product]="product"></app-product>
 </div>
