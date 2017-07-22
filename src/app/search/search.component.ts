@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Product} from '../../models/productModel';
+import { ProductService } from "../product/product-service";
 
 @Component({
   selector: 'app-search',
@@ -9,31 +10,18 @@ import {Product} from '../../models/productModel';
 })
 
 export class SearchComponent implements OnInit {
-  @Input() products: Product[];
   @Output() public filteredProducts = new EventEmitter();
 
   public searchInput = new FormControl();
-
-  constructor() {
-    this.searchInput.valueChanges.subscribe(value => this.filter(value));
+  
+  constructor(private productService: ProductService) {
+    this.searchInput.valueChanges.subscribe(value => this.filteredProducts.next(productService.filterProducts(value)));
   }
 
   ngOnInit() {
-    this.filteredProducts.next(this.products);
+    this.filteredProducts.next(this.productService.getProducts());
+    
   }
 
-  filter = (searchText: string) => {
-    const searchTextLowered = searchText.toLowerCase();
-    const result = this.products.filter(product =>
-      this.filterProduct(product.name, searchTextLowered) ||
-      this.filterProduct(product.price, searchTextLowered) ||
-      this.filterProduct(product.description, searchTextLowered)
-     );
-    this.filteredProducts.next(result);
-  }
-
-  filterProduct = (property: any , searchText: string ) => {
-      const formattedProperty = typeof property === 'number' ? property.toString() : property;
-      return formattedProperty.toLowerCase().includes(searchText);
-  }
+  
 }

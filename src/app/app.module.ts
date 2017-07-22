@@ -7,6 +7,8 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { SearchComponent } from './search/search.component';
 
+import {ProductService} from './product/product-service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +19,7 @@ import { SearchComponent } from './search/search.component';
   imports: [
     BrowserModule, ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,7 +8,7 @@
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
     </ul>
     <div class="form-inline my-2 my-lg-0">
-      <app-search [products]="allProducts" (filteredProducts)="resolveProducts($event)"></app-search>
+      <app-search (filteredProducts)="resolveProducts($event)"></app-search>
     </div>
   </div>
 </nav>
