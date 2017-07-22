@@ -6,25 +6,13 @@
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <a class="navbar-brand" href="#">DevShop</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <!-- <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li> -->
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <div class="form-inline my-2 my-lg-0">
+      <app-search [products]="allProducts" (filteredProducts)="resolveProducts($event)"></app-search>
+    </div>
   </div>
 </nav>
 
 <div style="text-align:center">
-
-<h2>List of products</h2>
-<app-product-list></app-product-list>
+<app-product-list [products]="filteredProducts"></app-product-list>
 </div>

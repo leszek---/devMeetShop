@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Product} from '../models/productModel';
+import {products} from '../data/products';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,10 @@ import {Product} from '../models/productModel';
   styles: ['.nSize:{width: 300px; height; 300px;}']
 })
 export class AppComponent {
+  public allProducts = products;
+  public filteredProducts: Product[];
 
+  resolveProducts = (filteredProducts: Product[]) => {
+    this.filteredProducts = filteredProducts;
+  }
 }
