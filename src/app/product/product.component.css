@@ -1,4 +1,7 @@
 .nSize{
+min-height: 300px;
+min-width: 300px;
+
     width: 300px;
     height: 300px;
 }
@@ -12,4 +15,5 @@
 }
 .productConteiner{
     position: relative;
+    margin: 5px;
 }
