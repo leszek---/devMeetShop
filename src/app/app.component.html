@@ -1,11 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
 <h1>List of products</h1>
-<div *ngFor="let product of products">{{ product.id }} {{product.name}}</div>
 
 <div class="card-group">
   <div class="card" *ngFor="let product of products">
-    <img class="card-img-top" src="{{product.photoUrl}}" alt="Card image cap">
+    <img class="card-img-top nSize" src="{{product.photoUrl}}" alt="Card image cap">
     <div class="card-block">
       <h4 class="card-title">{{product.name}}</h4>
       <p class="card-text">{{product.description}}</p>
