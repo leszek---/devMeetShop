@@ -1,9 +1,10 @@
-  <div class="card" >
+  <div class="card productConteiner" >
     <img class="card-img-top nSize" src="{{product.photoUrl}}" alt="Card image cap">
+    <img *ngIf="product.isPromoted" class="promotionStar" src="http://www.biuro-ars.pl/img/star.png" alt="star">
     <div class="card-block">
       <h4 class="card-title">{{product.name}}</h4>
       <p class="card-text">{{product.description}}</p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Jest promowany: {{product.isPromoted}}</small>
+      <small class="text-muted">${{product.price}}</small>
     </div>
