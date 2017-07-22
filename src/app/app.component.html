@@ -3,3 +3,15 @@
 <h1>List of products</h1>
 <div *ngFor="let product of products">{{ product.id }} {{product.name}}</div>
 
+<div class="card-group">
+  <div class="card" *ngFor="let product of products">
+    <img class="card-img-top" src="..." alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title">{{product.name}}</h4>
+      <p class="card-text">{{product.description}}</p>
+    </div>
+    <div class="card-footer">
+      <small class="text-muted">Jest promowany{{product.isPromoted}}</small>
+    </div>
+  </div>
+
